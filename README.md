@@ -16,7 +16,7 @@ Website based on the well renown movies and books, The Hunger Games. This websit
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/hunger-games-website.git
+   git clone https://github.com/RyanNorthern02/Panem-Chronicles.git
    ```
 2. Open the `index.html` file in your browser.
 
@@ -25,6 +25,7 @@ Website based on the well renown movies and books, The Hunger Games. This websit
 - **Shop**: Browse and purchase themed items.
 - **Trivia**: Test your knowledge with interactive quizzes.
 - **Fan Art**: Explore fan art submissions.
+- **History and Districts of Panem**: Explore the history and districts based around panem.
 
 ## Contributing
 Feel free to fork the project and submit pull requests. Contributions are welcome!
@@ -33,5 +34,5 @@ Feel free to fork the project and submit pull requests. Contributions are welcom
 This project is open-source and available under the [MIT License](LICENSE).
 
 ## Contact
-For any questions or suggestions, feel free to reach out via [your-email@example.com](mailto:your-email@example.com).
+For any questions or suggestions, feel free to reach out via [ryannorthern@gmail.com](mailto:ryannorthern@gmail.com).
 

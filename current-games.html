@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Hunger Games</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <a href="index.html">
+        <img src="hungergames.jpg" alt="Mockingjay" class="logo">
+      </a>
+      <h1>The Hunger Games</h1>
+    </div>
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="districts.html">Districts</a></li>
+		<li><a href="index.html#fan-zone">Fan Zone</a></li>
+		<li><a href="quiz.html">Quiz</a></li>
+		<li><a href="shop.html">Shop</a></li>
+    </ul>
+  </header>
+  
+  <button class="dark-mode-toggle" id="darkModeToggle">Dark Mode</button>
+
+  <main>
+    <section id="hero">
+      <h2>Welcome to the Arena</h2>
+      <p>Experience the thrill and danger of this year's Hunger Games.</p>
+    </section>
+
+    <section class="content-section" id="tributes">
+      <h2>The Tributes</h2>
+      <p>Select a district to view its tributes:</p>
+      <select class="district-dropdown" id="district-selector">
+        <option value="">-- Select District --</option>
+        <option value="district1">District 1</option>
+        <option value="district2">District 2</option>
+        <option value="district3">District 3</option>
+        <option value="district4">District 4</option>
+        <option value="district5">District 5</option>
+        <option value="district6">District 6</option>
+        <option value="district7">District 7</option>
+        <option value="district8">District 8</option>
+        <option value="district9">District 9</option>
+        <option value="district10">District 10</option>
+        <option value="district11">District 11</option>
+        <option value="district12">District 12</option>
+      </select>
+      <!-- Two images for each district -->
+      <div id="district1" class="district-images">
+        <img src="glimmer.jpg" alt="District 1 Tribute 1" class="district-image">
+        <img src="marvel.jpg" alt="District 1 Tribute 2" class="district-image">
+      </div>
+      <div id="district2" class="district-images">
+        <img src="clove.jpg" alt="District 2 Tribute 1" class="district-image">
+        <img src="cato.jpg" alt="District 2 Tribute 2" class="district-image">
+      </div>
+      <div id="district3" class="district-images">
+        <img src="3.jpg" alt="District 3 Tribute 1" class="district-image">
+        <img src="3.2.jpg" alt="District 3 Tribute 2" class="district-image">
+      </div>
+      <div id="district4" class="district-images">
+        <img src="4.jpg" alt="District 4 Tribute 1" class="district-image">
+        <img src="4.2.jpg" alt="District 4 Tribute 2" class="district-image">
+      </div>
+      <div id="district5" class="district-images">
+        <img src="foxface.jpg" alt="District 5 Tribute 1" class="district-image">
+        <img src="5.jpg" alt="District 5 Tribute 2" class="district-image">
+      </div>
+      <div id="district6" class="district-images">
+        <img src="6.jpg" alt="District 6 Tribute 1" class="district-image">
+        <img src="6.2.jpg" alt="District 6 Tribute 2" class="district-image">
+      </div>
+      <div id="district7" class="district-images">
+        <img src="7.jpg" alt="District 7 Tribute 1" class="district-image">
+        <img src="7.2.jpg" alt="District 7 Tribute 2" class="district-image">
+      </div>
+      <div id="district8" class="district-images">
+        <img src="8.jpg" alt="District 8 Tribute 1" class="district-image">
+        <img src="8.2.jpg" alt="District 8 Tribute 2" class="district-image">
+      </div>
+      <div id="district9" class="district-images">
+        <img src="9.jpg" alt="District 9 Tribute 1" class="district-image">
+        <img src="9.2.jpg" alt="District 9 Tribute 2" class="district-image">
+      </div>
+      <div id="district10" class="district-images">
+        <img src="10.jpg" alt="District 10 Tribute 1" class="district-image">
+        <img src="10.2.jpg" alt="District 10 Tribute 2" class="district-image">
+      </div>
+      <div id="district11" class="district-images">
+        <img src="rue.jpg" alt="District 11 Tribute 1" class="district-image">
+        <img src="thresh.jpg" alt="District 11 Tribute 2" class="district-image">
+      </div>
+      <div id="district12" class="district-images">
+        <img src="katniss.jpg" alt="District 12 Tribute 1" class="district-image">
+        <img src="peeta.jpg" alt="District 12 Tribute 2" class="district-image">
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>The Arena</h2>
+      <p>This year's arena is filled with surprises, traps, and challenges designed to test the tributes to their limits.</p>
+      <img src="arena.jpg" alt="The Arena" class="content-image">
+    </section>
+
+    <section class="content-section highlight-section">
+      <h2>Key Highlights</h2>
+      <ul>
+        <li><span class="icon">&#9881;</span> The Capitol's advanced arena technology.</li>
+        <li><span class="icon">&#128077;</span> Strategies and alliances formed during the Games.</li>
+        <li><span class="icon">&#9889;</span> Heart-pounding moments of survival and defiance.</li>
+      </ul>
+    </section>
+
+    <section class="content-section">
+	  <h2>Live Coverage</h2>
+	  <p>Stay tuned for live updates, interviews with Capitol insiders, and exclusive behind-the-scenes coverage.</p>
+	  <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" target="_blank">
+		<button class="cta-button">Watch Live</button>
+	  </a>
+	</section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2024 Panem Chronicles. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    const districtSelector = document.getElementById('district-selector');
+    const districtImages = document.querySelectorAll('.district-images');
+
+    // Toggle mobile menu
+    mobileMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Handle district selection
+    districtSelector.addEventListener('change', () => {
+      // Hide all districts first
+      districtImages.forEach(district => {
+        district.style.display = 'none';
+      });
+    
+      // Get the selected district
+      const selectedDistrict = districtSelector.value;
+    
+      // Show the images of the selected district
+      if (selectedDistrict) {
+        document.getElementById(selectedDistrict).style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
+

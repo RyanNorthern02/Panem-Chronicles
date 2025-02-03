@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panem Chronicles</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <a href="#hero">
+        <img src="hungergames.jpg" alt="Mockingjay" class="logo">
+      </a>
+      <h1>Panem Chronicles</h1>
+    </div>
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="districts.html">Districts</a></li>
+      <li><a href="current-games.html">The Hunger Games</a></li>
+      <li><a href="#fan-zone">Fan Zone</a></li>
+	  <li><a href="quiz.html">Quiz</a></li>
+      <li><a href="shop.html">Shop</a></li>
+    </ul>
+  </header>
+
+  <button class="dark-mode-toggle" id="darkModeToggle">Dark Mode</button>
+
+  <main>
+    <section id="hero">
+      <h2>May the odds be ever in your favor</h2>
+      <p>Explore the world of Panem like never before.</p>
+      <button class="cta-button">Start Exploring</button>
+    </section>
+
+    <section id="districts" class="content-section">
+      <h2>Districts of Panem</h2>
+      <img src="districts.jpg" alt="Map of Panem" class="map">
+      <p>Discover the unique traits of each district, from District 12's coal miners to the Capitol's luxury and opulence.</p>
+    </section>
+
+    <section id="games" class="content-section">
+      <h2>The Hunger Games Archive</h2>
+      <p>Dive into the history, tributes, and arenas of Panem's most notorious tradition.</p>
+      <button class="cta-button">Explore More</button>
+    </section>
+
+    <section id="fan-zone" class="content-section">
+      <h2>Fan Zone</h2>
+      <div class="fan-art">
+        <img src="fanart1.jpg" alt="Fan Art 1">
+        <img src="fanart2.jpg" alt="Fan Art 2">
+        <img src="fanart3.jpg" alt="Fan Art 3">
+      </div>
+      <p>Show off your fandom with art, fiction, and cosplay from fellow tributes.</p>
+
+      <form class="fan-art-form">
+        <h3>Submit Your Fan Art For Review</h3>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="description" placeholder="Description of Your Art" rows="4" required></textarea>
+        <input type="file" name="artwork" accept="image/*" required>
+        <button type="submit">Submit</button>
+      </form>
+	  
+	  <section id="comments" class="content-section">
+		  <h2>Comments</h2>
+		  <div id="comment-list">
+			<!-- Comments will be dynamically added here -->
+		  </div>
+		  <form id="comment-form">
+			<textarea id="comment-input" placeholder="Leave a comment..." rows="4" required></textarea>
+			<button type="submit">Post Comment</button>
+		  </form>
+		</section>
+    </section>
+	
+	 <section id="shop" class="content-section">
+	  <h2>Shop</h2>
+	  <p>Find Mockingjay pins, custom merch, and more in our store.</p>
+	  <div style="margin-top: 1.5rem;">
+		<a href="shop.html" class="cta-button">Explore More</a>
+	  </div>
+	</section>
+
+    <section id="quiz-section">
+		<h2>Panem Quiz</h2>
+		  <div class="quiz-question" id="quiz-question">What is the primary industry of District 4?</div>
+		  <div class="quiz-options">
+			  <button data-answer="incorrect">Technology</button>
+			  <button data-answer="correct">Fishing</button>
+			  <button data-answer="incorrect">Lumber</button>
+			  <button data-answer="incorrect">Grain</button>
+		  </div>
+		  <div class="quiz-result" id="quiz-result"></div>
+	  </section>
+	  
+	  <div id="chatbot-container" style="display: none;">
+		  <div id="chatbot-header">
+			<h3>Effie Trinket Chatbot</h3>
+			<button id="chatbot-close">✖</button>
+		  </div>
+		  <div id="chatbot-messages"></div>
+		  <div id="chatbot-input">
+			<input id="chatbot-user-input" type="text" placeholder="Ask Effie anything...">
+			<button id="chatbot-send">Send</button>
+		  </div>
+		</div>
+		<button id="chatbot-toggle">💬 Chat with Effie</button>
+
+	<section id="quote-carousel" class="content-section">
+	  <h2>Iconic Quotes</h2>
+	  <div class="carousel">
+		<div class="carousel-item active">"May the odds be ever in your favor." - Effie Trinket</div>
+		<div class="carousel-item">"Fire is catching! And if we burn, you burn with us!" - Katniss Everdeen</div>
+		<div class="carousel-item">"Hope is the only thing stronger than fear." - President Snow</div>
+		<div class="carousel-item">"It takes ten times as long to put yourself back together as it does to fall apart." - Finnick Odair</div>
+	  </div>
+	  <div class="carousel-controls">
+		<button class="prev-btn">❮</button>
+		<button class="next-btn">❯</button>
+	  </div>
+	</section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Panem Chronicles. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    const darkModeToggle = document.getElementById('darkModeToggle');
+	const chatbotContainer = document.getElementById('chatbot-container');
+	const chatbotToggle = document.getElementById('chatbot-toggle');
+	const chatbotClose = document.getElementById('chatbot-close');
+	const chatbotMessages = document.getElementById('chatbot-messages');
+	const chatbotUserInput = document.getElementById('chatbot-user-input');
+	const chatbotSend = document.getElementById('chatbot-send');
+
+    // Toggle mobile menu
+    mobileMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Smooth scrolling to sections when clicking links
+    const links = document.querySelectorAll('.nav-links a');
+    links.forEach(link => {
+      link.addEventListener('click', function(event) {
+        const href = this.getAttribute('href');
+
+        // Only prevent default for internal links with a "#" symbol
+        if (href.startsWith('#')) {
+          event.preventDefault();
+          const targetId = href.substring(1);
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+            const headerOffset = document.querySelector('header').offsetHeight;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition - headerOffset;
+
+            window.scrollBy({
+              top: offsetPosition,
+              behavior: 'smooth',
+            });
+          }
+        }
+      });
+    });
+
+    // Dark mode toggle
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+
+      if (document.body.classList.contains('dark-mode')) {
+        darkModeToggle.textContent = 'Light Mode';
+        document.documentElement.style.setProperty('--background-color', '#121212');
+        document.documentElement.style.setProperty('--text-color', '#f9f9f9');
+      } else {
+        darkModeToggle.textContent = 'Dark Mode';
+        document.documentElement.style.setProperty('--background-color', '#f9f9f9');
+        document.documentElement.style.setProperty('--text-color', '#333');
+      }
+    });
+	
+	// Quote Carousel Script
+		const carouselItems = document.querySelectorAll('.carousel-item');
+		const prevBtn = document.querySelector('.prev-btn');
+		const nextBtn = document.querySelector('.next-btn');
+		let currentIndex = 0;
+
+		function showItem(index) {
+		  carouselItems.forEach((item, i) => {
+			item.classList.remove('active');
+			if (i === index) {
+			  item.classList.add('active');
+			}
+		  });
+		}
+
+		function showNext() {
+		  currentIndex = (currentIndex + 1) % carouselItems.length;
+		  showItem(currentIndex);
+		}
+
+		function showPrev() {
+		  currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+		  showItem(currentIndex);
+		}
+
+		nextBtn.addEventListener('click', showNext);
+		prevBtn.addEventListener('click', showPrev);
+
+		// OpenAI API details
+		const OPENAI_API_URL = "https://api.openai.com/v1/chat/completions";
+		const OPENAI_API_KEY = "Your_API_KEY"; // Replace with your API key
+
+		// Toggle chatbot visibility
+		chatbotToggle.addEventListener('click', () => {
+		  chatbotContainer.style.display = 'flex';
+		  chatbotToggle.style.display = 'none';
+		});
+
+		chatbotClose.addEventListener('click', () => {
+		  chatbotContainer.style.display = 'none';
+		  chatbotToggle.style.display = 'block';
+		});
+
+		// Add message to chat
+		function addMessage(sender, text) {
+		  const message = document.createElement('div');
+		  message.classList.add('message', sender);
+		  message.textContent = text;
+		  chatbotMessages.appendChild(message);
+		  chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+		}
+
+		// Fetch response from ChatGPT API
+		async function fetchAIResponse(userInput) {
+		  addMessage('bot', "Effie is pondering...");
+
+		  try {
+			const response = await fetch(OPENAI_API_URL, {
+			  method: "POST",
+			  headers: {
+				Authorization: `Bearer ${OPENAI_API_KEY}`,
+				"Content-Type": "application/json",
+			  },
+			  body: JSON.stringify({
+				model: "gpt-3.5-turbo", // or "gpt-4" if available
+				messages: [{ role: "system", content: "You are Effie Trinket from The Hunger Games. Be quirky and elegant in your responses." }, { role: "user", content: userInput }],
+				max_tokens: 100, // Adjust based on response length
+				temperature: 0.7, // Controls creativity
+			  }),
+			});
+
+			const data = await response.json();
+			const aiResponse = data.choices[0]?.message?.content || "Effie is speechless. Try again!";
+			addMessage('bot', aiResponse);
+		  } catch (error) {
+			addMessage('bot', "Effie encountered a problem. Please try again later.");
+			console.error(error);
+		  }
+		}
+
+		// Handle user input
+		chatbotSend.addEventListener('click', () => {
+		  const userInput = chatbotUserInput.value.trim();
+		  if (userInput) {
+			addMessage('user', userInput);
+			chatbotUserInput.value = '';
+			fetchAIResponse(userInput);
+		  }
+		});
+
+		chatbotUserInput.addEventListener('keypress', (event) => {
+		  if (event.key === "Enter") {
+			chatbotSend.click();
+		  }
+		});
+
+		// Automatically rotate quotes every 5 seconds
+		setInterval(showNext, 5000);
+		
+		quizBtn.addEventListener('click', () => {
+		  document.getElementById('districts').style.display = 'none';
+		  quizSection.style.display = 'block';
+		});
+
+		quizOptions.forEach(option => {
+		  option.addEventListener('click', (e) => {
+			const answer = e.target.getAttribute('data-answer');
+			if (answer === 'correct') {
+			  quizResult.textContent = 'Correct! District 4 specializes in fishing.';
+			} else {
+			  quizResult.textContent = 'Incorrect. Try again!';
+			}
+		  });
+		});
+
+  </script>
+</body>
+</html>

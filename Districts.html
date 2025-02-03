@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Districts of Panem - Panem Chronicles</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Districts Section */
+        #districts {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        #districts h2 {
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .districts-overview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .district-card {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            padding: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .district-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .district-card h3 {
+            margin: 1rem 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .district-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .district-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #222;
+            color: #fff;
+        }
+
+        /* CSS Variables for theming */
+        :root {
+            --primary-color: #ff4500;
+            --secondary-color: #222;
+            --background-color: #f9f9f9;
+            --text-color: #333;
+            --hover-color: #e63e00;
+            --white: #fff;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --blur: 10px;
+            --shadow-color: rgba(0, 0, 0, 0.2);
+        }
+
+        /* General Reset */
+        body, h1, h2, p, ul, li, a, button {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Body Styling */
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* HEADER AND NAVIGATION */
+        header {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px var(--shadow-color);
+        }
+
+        header .logo {
+            height: 50px;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links li a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        .nav-links li a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links li a::after {
+            content: '';
+            display: block;
+            height: 2px;
+            width: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-links li a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 0.3rem;
+            cursor: pointer;
+        }
+
+        .menu-toggle .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--secondary-color);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                text-align: center;
+                width: 100%;
+            }
+        }
+
+        /* HERO SECTION */
+        #hero {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('hungergames2.jpg') no-repeat center center/cover;
+            height: 60vh;
+            color: var(--white);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        #hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        #hero .cta-button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px var(--shadow-color);
+            transition: transform 0.3s ease;
+        }
+
+        #hero .cta-button:hover {
+            transform: scale(1.05);
+            background-color: var(--hover-color);
+        }
+
+        /* MAIN CONTENT SECTIONS */
+        .content-section {
+            padding: 3rem;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .content-section:nth-child(even) {
+            background-color: var(--glass-bg);
+            backdrop-filter: blur(var(--blur));
+        }
+
+        .content-section h2 {
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        .map {
+            width: 100%;
+            max-width: 600px;
+            margin: 1rem auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--hover-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        /* Dark Mode Toggle */
+        .dark-mode-toggle {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: var(--hover-color);
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <img src="hungergames.jpg" alt="Mockingjay" class="logo">
+        <h1>Panem Chronicles</h1>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="current-games.html">The Hunger Games</a></li>
+                <li><a href="index.html#fan-zone">Fan Zone</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="shop.html">Shop</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <button class="dark-mode-toggle" id="darkModeToggle">Dark Mode</button>
+
+    <main>
+        <section id="districts">
+            <h2>Explore the Districts of Panem</h2>
+            <div class="districts-overview">
+                <!-- District 1 -->
+                <div class="district-card">
+                    <img src="district1.webp" alt="District 1">
+                    <h3>District 1</h3>
+                    <p>Known for luxury goods, District 1 provides the Capitol with opulent items.</p>
+                </div>
+                <!-- District 2 -->
+                <div class="district-card">
+                    <img src="district2.webp" alt="District 2">
+                    <h3>District 2</h3>
+                    <p>Famed for masonry and Peacekeeper training, this district plays a crucial role in Panem's defense.</p>
+                </div>
+                <!-- District 3 -->
+                <div class="district-card">
+                    <img src="district3.jpg" alt="District 3">
+                    <h3>District 3</h3>
+                    <p>Specializing in technology, this district produces electronics and machinery.</p>
+                </div>
+                <!-- District 4 -->
+                <div class="district-card">
+                    <img src="district4.jpg" alt="District 4">
+                    <h3>District 4</h3>
+                    <p>A coastal district known for fishing and maritime expertise.</p>
+                </div>
+                <!-- District 5 -->
+                <div class="district-card">
+                    <img src="district5.jpg" alt="District 5">
+                    <h3>District 5</h3>
+                    <p>Power generation is the primary industry of this district.</p>
+                </div>
+                <!-- District 6 -->
+                <div class="district-card">
+                    <img src="district6.jpg" alt="District 6">
+                    <h3>District 6</h3>
+                    <p>Transportation and logistics dominate this district's economy.</p>
+                </div>
+                <!-- District 7 -->
+                <div class="district-card">
+                    <img src="district7.jpg" alt="District 7">
+                    <h3>District 7</h3>
+                    <p>Known for its forestry industry, providing lumber and paper products.</p>
+                </div>
+                <!-- District 8 -->
+                <div class="district-card">
+                    <img src="district8.jpg" alt="District 8">
+                    <h3>District 8</h3>
+                    <p>This district focuses on textiles, producing clothing and fabrics.</p>
+                </div>
+                <!-- District 9 -->
+                <div class="district-card">
+                    <img src="district9.jpg" alt="District 9">
+                    <h3>District 9</h3>
+                    <p>Agriculture and grain production are central to this district's industry.</p>
+                </div>
+                <!-- District 10 -->
+                <div class="district-card">
+                    <img src="district10.jpg" alt="District 10">
+                    <h3>District 10</h3>
+                    <p>Focused on livestock, this district ensures meat production for Panem.</p>
+                </div>
+                <!-- District 11 -->
+                <div class="district-card">
+                    <img src="district11.jpg" alt="District 11">
+                    <h3>District 11</h3>
+                    <p>Agriculture and orchards dominate this sprawling district's economy.</p>
+                </div>
+                <!-- District 12 -->
+                <div class="district-card">
+                    <img src="district12.jpg" alt="District 12">
+                    <h3>District 12</h3>
+                    <p>The coal mining district, known for its hardworking residents and gritty survival spirit.</p>
+                </div>
+                <!-- Hidden District 13 -->
+                <div class="district-card district-13" style="display: none;">
+                    <img src="district13.jpg" alt="District 13">
+                    <h3>District 13</h3>
+                    <p>Once thought destroyed, this district is alive and thriving underground.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Panem Chronicles. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const districtsSection = document.getElementById("districts");
+        const hiddenDistrict = document.querySelector(".district-13");
+        let clickCount = 0;
+
+        // Dark mode toggle
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                darkModeToggle.textContent = 'Light Mode';
+                document.documentElement.style.setProperty('--background-color', '#121212');
+                document.documentElement.style.setProperty('--text-color', '#f9f9f9');
+            } else {
+                darkModeToggle.textContent = 'Dark Mode';
+                document.documentElement.style.setProperty('--background-color', '#f9f9f9');
+                document.documentElement.style.setProperty('--text-color', '#333');
+            }
+        });
+
+        // Easter egg: Reveal District 13 after 10 clicks on district cards
+        districtsSection.addEventListener("click", function (event) {
+            if (event.target.closest(".district-card")) {
+                clickCount++;
+                if (clickCount >= 10) {
+                    hiddenDistrict.style.display = "block";
+                }
+            }
+        });
+
+        // Optional: Hover event to reveal District 13
+        districtsSection.addEventListener("mouseover", function () {
+            if (hiddenDistrict && clickCount >= 10) {
+                hiddenDistrict.style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>
